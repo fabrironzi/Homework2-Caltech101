@@ -18,21 +18,22 @@ class Caltech(VisionDataset):
     def __init__(self, root, split='train', transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
-        if ( split != 'train' or split != 'test'):
+        if ( split == 'train' or split == 'test'):
             
-            with open('../Homework2-Caltech101/101_ObjectCategories') as fp:
-                content = fp.readlines()
-                
-                while(content != null):
-                    if(content == 'BACKGROUND_Google'):
+            with open("Homework2-Caltech101/101_ObjectCategories", "r") as fp:
+                content = fp.readline()
+                while(content):
+                    if(content.startswith('BACKGROUND_Google')):
                         continue
                 
-           fp.close()         
+                fp.close()         
             
 
-        self.split = split # This defines the split you are going to use
-                           # (split files are called 'train.txt' and 'test.txt')
-
+# =============================================================================
+#         self.split = split # This defines the split you are going to use
+#                            # (split files are called 'train.txt' and 'test.txt')
+# 
+# =============================================================================
         '''
         - Here you should implement the logic for reading the splits files and accessing elements
         - If the RAM size allows it, it is faster to store all data in memory
