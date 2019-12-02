@@ -17,6 +17,16 @@ def pil_loader(path):
 class Caltech(VisionDataset):
     def __init__(self, root, split='train', transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
+        
+        if ( split != 'train' ):
+            
+            with open('../Homework2-Caltech101/101_ObjectCategories') as fp:
+                content = fp.readlines()
+                if(content == 'BACKGROUND_Google'):
+                    continue
+                
+                
+            
 
         self.split = split # This defines the split you are going to use
                            # (split files are called 'train.txt' and 'test.txt')
