@@ -18,14 +18,16 @@ class Caltech(VisionDataset):
     def __init__(self, root, split='train', transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
-        if ( split != 'train' ):
+        if ( split != 'train' || split != 'test'):
             
             with open('../Homework2-Caltech101/101_ObjectCategories') as fp:
                 content = fp.readlines()
-                if(content == 'BACKGROUND_Google'):
-                    continue
                 
+                while(content != null):
+                    if(content == 'BACKGROUND_Google'):
+                        continue
                 
+           fp.close()         
             
 
         self.split = split # This defines the split you are going to use
