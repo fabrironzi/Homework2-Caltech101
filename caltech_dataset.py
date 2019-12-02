@@ -5,8 +5,6 @@ from PIL import Image
 import os
 import os.path
 import sys
-from Homework2_Caltech101 import caltech_dataset as cal_ds
-
 
 def pil_loader(path):
     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
