@@ -19,7 +19,7 @@ class Caltech(VisionDataset):
         
         if ( split == "train" or split == "test"):
             
-            self.slpit = self.split + ".txt"
+            self.split = self.split + ".txt"
             print(self.split)
             
             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
