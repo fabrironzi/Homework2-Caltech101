@@ -18,7 +18,7 @@ class Caltech(VisionDataset):
     def __init__(self, root, split='train', transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
-        if ( split != 'train' || split != 'test'):
+        if ( split != 'train' or split != 'test'):
             
             with open('../Homework2-Caltech101/101_ObjectCategories') as fp:
                 content = fp.readlines()
