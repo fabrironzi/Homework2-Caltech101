@@ -5,7 +5,7 @@ from PIL import Image
 import os
 import os.path
 import sys
-from Homework2_Caltech101 import Caltech as ds
+from Homework2_Caltech101 import caltech_dataset as cal_ds
 
 
 def pil_loader(path):
