@@ -19,14 +19,12 @@ class Caltech(VisionDataset):
         
         print("Ciaooo")
         print(self.split)
-        split(split)
-        print(this.split)
         
         
-        if ( split == "train" or split == "test"):
+        if ( self.split == "train" or self.split == "test"):
             
-            split = split + ".txt"
-            print(split)
+            self.split = self.split + ".txt"
+            print(self.split)
             
             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
                 content = fp.readline()
