@@ -17,6 +17,12 @@ class Caltech(VisionDataset):
     def __init__(self, root, split="train", transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
+        print("Ciaooo")
+        print(self.split)
+        split(split)
+        print(this.split)
+        
+        
         if ( split == "train" or split == "test"):
             
             split = split + ".txt"
