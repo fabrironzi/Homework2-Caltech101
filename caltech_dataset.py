@@ -17,10 +17,10 @@ class Caltech(VisionDataset):
     def __init__(self, root, split="train", transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
-        if ( self.split == "train" or self.split == "test"):
+        if ( split == "train" or split == "test"):
             
-            self.split = self.split + ".txt"
-            print(self.split)
+            split = split + ".txt"
+            print(split)
             
             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
                 content = fp.readline()
