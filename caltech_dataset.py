@@ -22,7 +22,7 @@ class Caltech(VisionDataset):
         print(split)
          
          
-        if ( self.split == "train" or self.split == "test"):
+        if ( split == "train" or split == "test"):
             
             self.split = self.split + ".txt"
             print(self.split)
