@@ -19,19 +19,14 @@ class Caltech(VisionDataset):
 
         if ( split == "train" or split == "test"):
             
-            
-            print("Hola")
-            
-            
-            
-            
-            
             split = split + ".txt"
             
-            with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
+            with open("Homework2_Caltech101/" + split, 'r') as fp:
                 content = fp.readline()
-                while(content):
+                
+                for content in fp:
                     if(content.startswith("BACKGROUND_Google")):
+                        print('Deleting...')
                         continue
                
             fp.close()         
