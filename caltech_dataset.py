@@ -19,6 +19,13 @@ class Caltech(VisionDataset):
         
         if ( split == "train" or split == "test"):
             
+            
+            
+            p
+            
+            
+            
+            
             split = split + ".txt"
             
             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
