@@ -16,25 +16,23 @@ def pil_loader(path):
 class Caltech(VisionDataset):
     def __init__(self, root, split="train", transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
-# =============================================================================
-#         
-#         print("Ciaooo")
-#         print(split)
-#          
-#          
-#         if ( split == "train" or split == "test"):
-#             
-#             self.split = self.split + ".txt"
-#             print(self.split)
-#             
-#             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
-#                 content = fp.readline()
-#                 while(content):
-#                     if(content.startswith("BACKGROUND_Google")):
-#                         continue
-#                
-#             fp.close()         
-# =============================================================================
+        
+        print("Ciaooo")
+        print(split)
+         
+         
+        if ( split == "train" or split == "test"):
+            
+            self.split = self.split + ".txt"
+            print(self.split)
+            
+            with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
+                content = fp.readline()
+                while(content):
+                    if(content.startswith("BACKGROUND_Google")):
+                        continue
+               
+            fp.close()         
             
 
 # =============================================================================
