@@ -18,23 +18,22 @@ class Caltech(VisionDataset):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
         print("Ciaooo")
-# =============================================================================
-#         print(self.split)
-#         
-#         
-#         if ( self.split == "train" or self.split == "test"):
-#             
-#             self.split = self.split + ".txt"
-#             print(self.split)
-#             
-#             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
-#                 content = fp.readline()
-#                 while(content):
-#                     if(content.startswith("BACKGROUND_Google")):
-#                         continue
-# =============================================================================
-                
-                fp.close()         
+
+        print(self.split)
+         
+         
+        if ( self.split == "train" or self.split == "test"):
+            
+            self.split = self.split + ".txt"
+            print(self.split)
+            
+            with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
+                content = fp.readline()
+                while(content):
+                    if(content.startswith("BACKGROUND_Google")):
+                        continue
+               
+               fp.close()         
             
 
 # =============================================================================
