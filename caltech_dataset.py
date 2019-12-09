@@ -19,7 +19,7 @@ class Caltech(VisionDataset):
         
         print("Ciaooo")
 
-        print(self.split)
+        print(split)
          
          
         if ( self.split == "train" or self.split == "test"):
@@ -33,7 +33,7 @@ class Caltech(VisionDataset):
                     if(content.startswith("BACKGROUND_Google")):
                         continue
                
-               fp.close()         
+            fp.close()         
             
 
 # =============================================================================
