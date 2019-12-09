@@ -20,7 +20,6 @@ class Caltech(VisionDataset):
         if ( split == "train" or split == "test"):
             
             split = split + ".txt"
-            print(split)
             
             with open("Homework2_Caltech101/101_ObjectCategories", "r") as fp:
                 content = fp.readline()
