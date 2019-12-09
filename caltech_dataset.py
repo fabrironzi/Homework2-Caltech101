@@ -26,8 +26,9 @@ class Caltech(VisionDataset):
                 
                 for content in fp:
                     if(content.startswith("BACKGROUND_Google")):
-                        print('Deleting...')
                         continue
+                    
+                
                
             fp.close()         
             
