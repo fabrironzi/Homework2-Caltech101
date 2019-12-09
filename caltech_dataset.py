@@ -18,7 +18,6 @@ class Caltech(VisionDataset):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
         
         print("Ciaooo")
-        stop
 # =============================================================================
 #         print(self.split)
 #         
