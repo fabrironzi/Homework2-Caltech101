@@ -31,8 +31,8 @@ class Caltech(VisionDataset):
             self.split = "Homework2_Caltech101/" + str(split) + ".txt"
             print(self.strip)
             
-            with open("Homework2_Caltech101/train.txt", 'r') as fp:
-            #with open(self.split, 'r') as fp:
+            #with open("Homework2_Caltech101/train.txt", 'r') as fp:
+            with open(self.split, 'r') as fp:
                 content = fp.readline()
                 
                 for content in fp:
