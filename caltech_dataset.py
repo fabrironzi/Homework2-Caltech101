@@ -5,6 +5,7 @@ from PIL import Image
 import os
 import os.path
 import sys
+import torch
 
 def pil_loader(path):
     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
@@ -79,13 +80,24 @@ class Caltech(VisionDataset):
             tuple: (sample, target) where target is class_index of the target class.
         '''
 
-        image, label = ... # Provide a way to access image and label via index
+        image, label = self.images[index]
+        
+        if not isinstance(image, torch.Tensor):
+            image = pil_loader(image)
+            image = self.transform(image)
+            
+        
+        
+        
+        # Provide a way to access image and label via index
                            # Image should be a PIL Image
                            # label can be int
 
         # Applies preprocessing when accessing the image
-        if self.transform is not None:
-            image = self.transform(image)
+# =============================================================================
+#         if self.transform is not None:
+#             image = self.transform(image)
+# =============================================================================
 
         return image, label
 
@@ -94,5 +106,7 @@ class Caltech(VisionDataset):
         The __len__ method returns the length of the dataset
         It is mandatory, as this is used by several other components
         '''
-        length = ... # Provide a way to get the length (number of elements) of the dataset
+        length = len(self.images)
+        
+        # Provide a way to get the length (number of elements) of the dataset
         return length
