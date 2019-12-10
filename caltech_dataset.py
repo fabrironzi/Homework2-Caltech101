@@ -14,21 +14,42 @@ def pil_loader(path):
 
 
 class Caltech(VisionDataset):
+    
+    set_categories = set()
+    images = []
+    transform = None
+
+    
     def __init__(self, root, split="train", transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
 
         if ( split == "train" or split == "test"):
             
-            split = split + ".txt"
+            self.split = split + ".txt"
             
             with open("Homework2_Caltech101/" + split, 'r') as fp:
                 content = fp.readline()
                 
                 for content in fp:
+                    
                     if(content.startswith("BACKGROUND_Google")):
                         print('Repository')
                         continue
                     
+                    data = ["./Homework2_Caltech101/101_ObjectCategories/" + content]
+                    self.set_categories.add(content.split("/"[0]))
+                    data.append(list(self.set_categories).index(content.split("/")[0]))
+                    
+                    try:
+                        image_loaded = pil_loader(data[0])
+                        data[0] = image_loaded
+                        data[0] = self.transform(data[0])
+                    except Exception as e:
+                        print(e)
+                        
+                    self.images.append(data)
+                    
+                print(data)
                 
                
             fp.close()         
