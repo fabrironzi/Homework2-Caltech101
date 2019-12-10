@@ -28,7 +28,7 @@ class Caltech(VisionDataset):
             
             self.split = split + ".txt"
             
-            with open("Homework2_Caltech101/" + split, 'r') as fp:
+            with open("Homework2_Caltech101/" + self.split, 'r') as fp:
                 content = fp.readline()
                 
                 for content in fp:
@@ -50,7 +50,7 @@ class Caltech(VisionDataset):
                         
                     self.images.append(data)
                     
-                print(data)
+            print(data)
                 
                
             fp.close()         
