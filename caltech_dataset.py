@@ -41,8 +41,8 @@ class Caltech(VisionDataset):
                         print('Repository')
                         continue
                     
-                    data = ["./Homework2_Caltech101/101_ObjectCategories/" + content]
-                    self.set_categories.add(content.split("/"[0]))
+                    data = ["./Homework2_Caltech101/101_ObjectCategories/" + content.strip()]
+                    self.set_categories.add(content.split("/")[0])
                     data.append(list(self.set_categories).index(content.split("/")[0]))
                     
                     try:
