@@ -23,10 +23,12 @@ class Caltech(VisionDataset):
     
     def __init__(self, root, split="train", transform=None, target_transform=None):
         super(Caltech, self).__init__(root, transform=transform, target_transform=target_transform)
+        
+        self.transform = transform
 
         if ( split == "train" or split == "test"):
             
-            self.split = split + ".txt"
+            self.split = str(split) + ".txt"
             
             with open("Homework2_Caltech101/" + self.split, 'r') as fp:
                 content = fp.readline()
