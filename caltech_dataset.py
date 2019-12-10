@@ -29,6 +29,7 @@ class Caltech(VisionDataset):
         if ( split == "train" or split == "test"):
             
             self.split = "Homework2_Caltech101/" + str(split) + ".txt"
+            print(self.strip)
             
             with open(self.split, 'r') as fp:
                 content = fp.readline()
